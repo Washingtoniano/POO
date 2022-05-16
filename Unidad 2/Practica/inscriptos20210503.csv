@@ -1,0 +1,10 @@
+apellido;nombre;dni;edad;telefono;zona;factor
+Castro;Adriana;25234234;45;2644567890;Capital;Ninguno
+Perez;Juan;8123345;70;2644123456;Rawson;Diabetes
+Sanchez;Pedro;9098876;68;2645654345;Capital;Cardiovascular
+Espejo;Ana;16234345;56;2656099887;Capital;Ninguno
+Mendoza;Maria;5456456;70;2645344556;Rawson;Diabetes
+Aballay;Andrea;39345567;25;2656454545;Rawson;Obesidad
+Chacon;Federico;23456678;48;2646786756;Rawson;Ninguno
+Atencio;Luis;22654567;50;2645789780;Pocito;Respiratoria
+Atencio;Miriam;22555666;50;2645789780;Pocito;Ninguno
