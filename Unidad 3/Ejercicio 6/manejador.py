@@ -1,4 +1,4 @@
-##se necesita una lista, un anejador y un nodo
+##se necesita una lista, un Manejador y un nodo
 @implementer(interfaz)
 from nodo import nodo
 class manejador:
@@ -17,12 +17,12 @@ class manejador:
 			rto=True
 		if pos==0:
 			objeto.setSiguiente(self.__com.getSiguiente)
-			self.__com=
+			self.__com=objeto
 			rto=True
 		else:
-			aus=self.__com
+			aux=self.__com
 			i=0
-			while aux.getSiguienre!=None and i<pos:
+			while  i<pos and aux.getSiguienre!=None :
 				i=i+1
 				aux=aux.getSiguiente()
 			if i<= pos:
@@ -33,7 +33,28 @@ class manejador:
 			else:
 				 rto=False
 			return rto
-	def mostrar_elemento(self,pos)
-	if pos=0
-	
-				
+	def mostrar_elemento(self,pos):
+	if pos=0:
+		print(self.__com)
+	else:
+		i=0
+		aux=self.__com
+		while i<len (pos) and aux.getsiguiente!=None:
+			i=i+1
+		if aux.getSiguiente==None:
+			print("No hay valor para esa posicion")
+		else:
+			print(aux)
+
+
+	def opcion1(self):
+		self.agregar_elemento()
+	def opcion2(self):
+		self.insertar_elemento()
+	def opcion3(self):
+		po=input("ingrese la posicion que desea buscar")
+		self.mostrar_elemento(op)
+	def opcion4(self):
+	def opcion5(self):
+	def opcion6(self):
+	def opcion7(self):

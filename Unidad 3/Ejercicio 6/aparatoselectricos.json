@@ -1,0 +1,57 @@
+{"__class__":"Manejador", 
+    "aparatos":[{
+        "__class__":"televisor",
+        "__atributos__":{
+            "marca":"LG",
+            "modelo":"Smart TV",
+            "color":"Negro",
+            "pais":"Corea del Sur",
+            "precio":75999,
+            "pantalla":"led",
+            "pulgadas":60,
+            "definicion":"FULL HD",
+            "conexion":"Verdadero"
+        }
+    },
+    {
+        "__class__":"heladera",
+        "__atributos__":{
+            "marca":"Philips",
+            "modelo":"phct290t-01",
+            "color":"Plata",
+            "pais":"Holanda",
+            "precio":79999,
+            "capacidad":21,
+            "freezer":"Verdadero",
+            "ciclica":"Falso"
+        }
+    },
+    {
+        "__class__":"lavarropa",
+        "__atributos__":{
+            "marca":"Drean",
+            "modelo":"Next 10-12 PG 10",
+            "color":"Gris",
+            "pais":"Argentina",
+            "precio":103899,
+            "capacidad":10,
+            "velocidad":1200,
+            "cantidad":12,
+            "tipo":"Frontal"
+        }
+    },
+    {
+        "__class__":"televisor",
+        "__atributos__":{
+            "marca":"Philips",
+            "modelo":"Smart TV 43",
+            "color":"Negro",
+            "pais":"Holanda",
+            "precio":54599,
+            "pantalla":"Plasma",
+            "pulgadas":43,
+            "definicion":"FULL HD",
+            "conexion":"Falso"
+        }
+    }]
+}
