@@ -57,7 +57,8 @@ class ManejaFacultades():
             else:
                 band=True
         if band==True:
-            print("codigo:{}{}-Nombre:{}-Localidad:{}".format(self.__indice[i].getCodigo(),car[j].getcodigo(),self.__indice[i].getNombre(),self.__indice[i].getLocalidad()))
+
+            print("codigo:{}-{}-Nombre:{}-Localidad:{}".format(self.__indice[i].getCodigo(),car[j-1].getcodigo(),self.__indice[i].getNombre(),self.__indice[i].getLocalidad()))
         else:
             print("La carrera no se dicta en ninguna facultad")
 
