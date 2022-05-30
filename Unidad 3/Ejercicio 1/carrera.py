@@ -8,6 +8,8 @@ class Carrera():
 		self.__Nombre=Nombre
 		self.__Duracion=Duracion
 		self.__Inicio=inicio
+	def getDuracion(self):
+		return self.__Duracion
 	def getcodigo (self):
 		return(self.__codigo)
 	def getDuracion(self):

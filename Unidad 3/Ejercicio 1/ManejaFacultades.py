@@ -24,6 +24,39 @@ class ManejaFacultades():
                     listaCarrera=[]
                     facu=fila
         archivo.close()
-    def mostrar(self):
+    def opcion3(self):
         for facu in self.__indice:
             print(facu)
+    def opcion1(self):
+        i=0
+        cod=int(input("Ingrese el codigo de la facultad"))
+        while i<len(self.__indice)and self.__indice[i].getCodigo()!=cod:
+            print(type(self.__indice[i].getCodigo()))
+            i=i+1
+        if i<len(self.__indice):
+            print(self.__indice[i])
+            print(self.__indice[i].getDuracion())
+        else:
+            print("error")
+    def opcion2(self):
+        nombre=input("Ingrese nombre de la carrera\n")
+        i=0
+        j=0
+        car=None
+        band=False
+        while i< len(self.__indice) and band==False:
+            car=self.__indice[i].getCarrera()
+            print((car[j]))
+            while(car[j].getNombre!=nombre and j<len(car)):
+                j=j+1
+            if j< len(car):
+                j=0
+                i=i+1
+            else:
+                band=True
+        if band==True:
+            print("codigo:{}{}-Nombre:{}-Localidad:{}".format(self.__indice[i].getCodigo(),car[j].getcodigo(),self.__indice[i].getNombre(),self.__indice[i].getLocalidad()))
+        else:
+            print("La carrera no se dicta en ninguna facultad")
+
+
