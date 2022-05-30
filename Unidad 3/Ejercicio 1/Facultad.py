@@ -14,7 +14,7 @@ class Fac():
 		self.__telefono=telefono
 		self.__Carrera=[]
 		for i in range (len(lista)):
-			unacarrera=Carrera(lista[i][0],lista[i][1],lista[i][2],lista[i][3])
+			unacarrera=Carrera(lista[i][0],lista[i][1],lista[i][2],lista[i][3],lista[i][4],lista[i][5])
 			self.__Carrera.append(unacarrera)
 	def getCodigo(self):
 		return(int(self.__codigo))
@@ -34,7 +34,7 @@ class Fac():
 		for Carrera in self.__Carrera:
 			print ("Carrera:{}-Duracion:{}".format(Carrera.getNombre(),Carrera.getDuracion()))
 	def __str__(self):
-		return ("Codigo:{}-Facultad:{}-Direccion:{}-Localidad:{}-Telefono:{}-Carrera:\n{}\n".format(self.__codigo,self.__nombre,self.__direccion,self.__localidad,self.__telefono,self.mostrar()))
+		return ("Codigo:{}-Facultad:{}-Direccion:{}-Localidad:{}-Telefono:{}\n".format(self.__codigo,self.__nombre,self.__direccion,self.__localidad,self.__telefono))
 	def mostrar (self):
 		for carrera in self.__Carrera:
 			print (carrera)

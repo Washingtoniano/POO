@@ -17,7 +17,7 @@ class ManejaFacultades():
                 listaCarrera=[]
             else:
                 if fila[0]==facu[0]:
-                    listaCarrera.append(facu)
+                    listaCarrera.append(fila)
                 else:
                     nuevafacultad=Fac(facu[0],facu[1],facu[2],facu[3],facu[4],listaCarrera)
                     self.__indice.append(nuevafacultad)
@@ -27,6 +27,8 @@ class ManejaFacultades():
     def opcion3(self):
         for facu in self.__indice:
             print(facu)
+            for car in facu.getCarrera():
+                print(car)
     def opcion1(self):
         i=0
         cod=int(input("Ingrese el codigo de la facultad"))
@@ -47,7 +49,7 @@ class ManejaFacultades():
         while i< len(self.__indice) and band==False:
             car=self.__indice[i].getCarrera()
             print((car[j]))
-            while(car[j].getNombre!=nombre and j<len(car)):
+            while(j<len(car) and car[j].getNombre!=nombre):
                 j=j+1
             if j< len(car):
                 j=0
