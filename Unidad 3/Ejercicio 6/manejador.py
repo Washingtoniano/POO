@@ -1,10 +1,15 @@
 ##se necesita una lista, un Manejador y un nodo
+from Aparatos import aparatos
+from interfaz import interfaz
 from Lavarropas import Lavarropas
-from Nodo import nodo
+from nodo import nodo
+import json
+from zope.interface import implementer
+
 @implementer(interfaz)
 class manejador:
 	__com=None
-	def __init__ (self, objeto):
+	def __init__ (self):
 		self.__com=None
 	def agregar_elemento(self,objeto):
 		unnodo=nodo(objeto)
@@ -26,7 +31,7 @@ class manejador:
 			if i== pos:
 	
 				objeto.setSiguiente(aux.getSiguiente())
-				aux.setSiguiente(nuevo)
+				aux.setSiguiente(objeto)
 			else:
 				raise IndexError
 	def mostrar_elemento(self,pos):
@@ -52,7 +57,7 @@ class manejador:
 			print ("El valor se salio de rango")
 	def opcion3(self):
 		po=input("ingrese la posicion que desea buscar")
-		self.mostrar_elemento(op)
+		self.mostrar_elemento(po)
 	def opcion4(self):
 		aux=self.__com
 		i=0
@@ -86,4 +91,28 @@ class manejador:
 		aux=self.__com
 		while aux!=None:
 			print(aux.getDato())
-	##def opcion7(self):
+	def toJason(self):
+		d=dict(
+			__class__=self.__class__.__name__,
+			aparatos=[aparato.toJason() for aparato in self.__com ]
+		)
+		return d
+	def opcion7(self):
+		self.toJason()
+	def operador(self,op):
+		if op==1:
+			self.opcion1()
+		elif op==2:
+			self.opcion2()
+		elif op==3:
+			self.opcion3()
+		elif op==4:
+			self.__man.opcion4()
+		elif op==5:
+			self.opcion5()
+		elif op==6:
+			self.opcion6()
+		elif op==7:
+			self.opcion7()
+		else:
+			print("Error")

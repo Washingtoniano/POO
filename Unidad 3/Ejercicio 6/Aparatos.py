@@ -16,4 +16,4 @@ class aparatos():
         return (self.__marca)
     def __str__(self):
         return("Marca:{}-Pais:{}-Importe:{}\n".format(self.__marca,self.__pais,self.__precio))
-        
+    

@@ -1,4 +1,5 @@
 from Aparatos import aparatos
+import json
 class Lavarropas(aparatos):
     __capacidad=''
     __velocidad=''

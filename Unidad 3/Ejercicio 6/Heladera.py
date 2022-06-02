@@ -1,4 +1,5 @@
 from Aparatos import aparatos
+import json
 class Heladera(aparatos):
     __capacidad=''
     __freezer=bool

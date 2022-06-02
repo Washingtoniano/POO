@@ -1,4 +1,6 @@
+from copyreg import pickle
 from Aparatos import aparatos
+import json
 class Televisor(aparatos):
     __pantalla=''
     __pulgadas=''
@@ -22,4 +24,20 @@ class Televisor(aparatos):
         if self.__internet== True:
             total=total+monto*10/100
         return total+monto
+    def toJason(self):
+        d=dict(
+            __class__=self.__class__.__name__,
+            __atributos__=dict(
+                color=self.__color,
+                pantalla=self.__pantalla,
+                pulgadas=self.__pulgadas,
+                interntet=self.__internet,
+                definiicion=self.__definicion,
+                marca=self.__marca,
+                modelo=self.__modelo,
+                pais=self.__pais,
+                precio=self.__precio
 
+            )
+        )
+        return d

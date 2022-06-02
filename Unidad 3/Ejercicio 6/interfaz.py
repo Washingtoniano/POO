@@ -1,5 +1,4 @@
 from zope.interface import Interface
-from zope.interface import implementer
 class interfaz (Interface):
 	def insertar_elemento(pos, objeto):
 		pass
