@@ -1,0 +1,4 @@
+linea 7:
+j=-len(self.__palabra)
+linea 10:
+if self.__palabra[j]!=self.__palabra[j]
