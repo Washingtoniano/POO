@@ -13,5 +13,8 @@ class Heladera(aparatos):
         total=monto
         if self.__ciclica==True:
             total=total+monto*10/100
-        if
-        return total
+        if self.__freezer==True:
+            total=total+monto*5/100
+        else:
+            total=total+monto*1/100
+        return total+monto
