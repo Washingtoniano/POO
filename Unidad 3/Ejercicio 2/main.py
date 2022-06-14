@@ -17,7 +17,7 @@ if __name__ == '__main__':
         op=testBloqueTryExcept(va)
         unmenu.manejador(op)
         va=input("Seleccione la opcion que desea\n 1-Registrar un ramo vendido\n 2-Las 5 flores mas vendidas\n 3-Ingresar por teclado un tipo de ramo y mostrar las flores vendidas en ese tamaño considerando todos los ramos vendidos\n 4-Salir\n")
-
+    print("Adios")
 
 
 

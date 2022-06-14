@@ -20,11 +20,10 @@ class ManejadorF():
                 if self.__cantidad==self.__dimension:
                     self.__dimension+=self.__incremento
                     self.__flores.resize(self.__dimension)
-                unaflor=(fila[0],fila[1],fila[2],fila[3])
+                unaflor=flores(fila[0],fila[1],fila[2],fila[3])
                 self.__flores[self.__cantidad]=unaflor
                 self.__cantidad+=1
     def dimension(self):
             return self.__flores
     def id (self):
         return self.__flores.id()
-

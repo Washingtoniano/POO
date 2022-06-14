@@ -12,6 +12,15 @@ class menu():
         elif op==2:
             self.__MR.opcion2()
         elif op==3:
-            self.__MR.opcion3(self.__dimension)
+            self.__MR.opcion3()
+        elif op==5:
+            print("lista flores")
+            for uno in self.__dimension:
+                print (uno)
+        elif op==6:
+            print("lista de ramos")
+            for uno in self.__MR.list():
+                print (uno)
         else:
             print("opcion no valida")
+

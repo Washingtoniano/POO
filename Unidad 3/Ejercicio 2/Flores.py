@@ -20,3 +20,5 @@ class flores():
         return self.__numero==other.__numero
     def __ne__(self, other):
         return self.__numero!=other.__numero
+    def __str__(self):
+        return("ID:{}-Nombre:{}-Color:{}-Descripcion:{}".format(self.__numero,self.__nombre,self.__color,self.__descripcion))
