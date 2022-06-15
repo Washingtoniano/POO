@@ -1,7 +1,8 @@
 ##se necesita una lista, un Manejador y un nodo
-from Aparatos import aparatos
 from interfaz import interfaz
 from Lavarropas import Lavarropas
+from Televisor import Televisor
+from Heladera import Heladera
 from nodo import nodo
 import json
 from zope.interface import implementer
@@ -14,7 +15,7 @@ class manejador:
 	def agregar_elemento(self,objeto):
 		unnodo=nodo(objeto)
 		unnodo.setSiguiente(self.__com)
-		self.__com=nodo
+		self.__com=unnodo
 	def insertar_elemento(self,objeto,pos):
 		##objeto es un nodo ,recomendacion: inicializar el nodo apuntando a siguiente None"
 		if self.__com==None:
@@ -29,7 +30,6 @@ class manejador:
 				i=i+1
 				aux=aux.getSiguiente()
 			if i== pos:
-	
 				objeto.setSiguiente(aux.getSiguiente())
 				aux.setSiguiente(objeto)
 			else:
@@ -47,24 +47,74 @@ class manejador:
 			else:
 				print(aux)
 
+	def objeto(self):
+		objeto=None
+		print("Ingrese los datos del elemento\n")
+		marca=input("Marca\n")
+		modelo=input("Modelo\n")
+		color=input("Color\n")
+		pais=input("Pais\n")
+		precio=float(input("Precio"))
+		band=False
+		clase=input("Tipo de aparato\n")
+		while band!=True:
+			if str.lower(clase)=='heladera':
+				capacidad=input("La capacidad de la heladera\n")
+				freezer=bool(int(input("Posee freezer?\n 0-No\t 1-Si")))
+				ciclica=bool(int(input("Es ciclica?\n 0-No\t 1-Si")))
+				print(freezer)
+				print(ciclica)
+				unaheladera=Heladera(marca,modelo,color,pais,precio,capacidad,freezer,ciclica)
+				objeto=unaheladera
+				band=True
+			elif str.lower(clase)=='televisor':
+				pantalla=input("Tipo de pantalla\n")
+				pulgadas=input("Pulgadas\n")
+				definicion=input("Definicion\n")
+				internet=bool(input("Posee internet?\n 0-No\t 1-Si"))
+				print(internet)
+				untelevisor=Televisor(marca,modelo,color,pais,precio,pantalla,pulgadas,definicion,internet)
+				objeto=untelevisor
+				band=True
+			elif str.lower(clase)=='lavarropas':
+				capacidad=input("Ingrese la capacidad del lavarropas")
+				velocidad=input("Velocidad de centrifugado")
+				programas=int(input("Cantidad de programas"))
+				tipodecarga=input("Tipo de carga")
+				unlavarropas=Lavarropas(marca,modelo,color,pais,precio,capacidad,velocidad,programas,tipodecarga)
+				objeto=unlavarropas
+				band=True
+			else:
+				print("elemento no valido")
+				clase=input("Tipo de aparato\n")
+		return  (objeto)
+	def opcion2(self):
+		ob=self.objeto()
+		if ob!=None:
+			self.agregar_elemento(ob)
 
 	def opcion1(self):
-		self.agregar_elemento()
-	def opcion2(self):
-		try:
-			self.insertar_elemento()
-		except IndexError:
-			print ("El valor se salio de rango")
+		ob=self.objeto()
+		if ob!=None:
+			pos=int(input("Por favor ingrese la posicion en la que quiere que este el objeto\n"))
+			unnodo=nodo(ob)
+			try:
+				self.insertar_elemento(unnodo,pos)
+			except IndexError:
+				print ("El valor se salio de rango")
 	def opcion3(self):
 		po=input("ingrese la posicion que desea buscar")
 		self.mostrar_elemento(po)
 	def opcion4(self):
 		aux=self.__com
 		i=0
+		print(type(aux.getDato()))
+		print(aux.getDato())
 		while aux!=None:
-			dato=aux.getDato()
-			if str.lower(dato.marca())=='philips':
-				print (dato)
+			print(type(aux.getDato.marca()))
+			if str.lower(aux.getDato.marca())=='philips':
+
+				print (aux.getDato())
 				i=i+1
 			aux=aux.getSiguiente()
 		if i==0:
@@ -91,6 +141,7 @@ class manejador:
 		aux=self.__com
 		while aux!=None:
 			print(aux.getDato())
+			aux=aux.getSiguiente()
 	def toJason(self):
 		d=dict(
 			__class__=self.__class__.__name__,
@@ -107,7 +158,7 @@ class manejador:
 		elif op==3:
 			self.opcion3()
 		elif op==4:
-			self.__man.opcion4()
+			self.opcion4()
 		elif op==5:
 			self.opcion5()
 		elif op==6:
