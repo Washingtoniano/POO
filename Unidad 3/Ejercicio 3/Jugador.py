@@ -12,3 +12,11 @@ class jugador():
         self.__Pais=pa
         self.__naci=Na
         self.__conta=[]
+    def nombre(self):
+        return self.__nombre
+    def __str__(self):
+        return("Nombre:{}-DNI:{}-Ciudad:{}-Pais:{}-Nacionalidad:{}-Contratos:{}\n".format(self.__nombre,self.__dni,self.__Ciudad,self.__Pais,self.__naci,self.__conta))
+    def contratar(self,contra):
+        self.__conta.append(contra)
+    def DNI(self):
+        return self.__dni

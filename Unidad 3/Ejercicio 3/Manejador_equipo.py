@@ -26,3 +26,5 @@ class ME():
                 self.__equipo[self.__cantidad]=unequipo
                 self.__cantidad+=1
         archivo.close()
+    def dimension(self):
+        return self.__equipo

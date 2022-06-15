@@ -10,3 +10,11 @@ class contrato():
         self.__pago=pago
         self.__equipo=equipo
         self.__jugador=jugador
+    def jugador(self):
+        return self.__jugador
+    def equipo(self):
+        return self.__equipo.nombre()
+    def fin(self):
+        return self.__fin
+    def __str__(self):
+        return ("Inicio:{}-FIn:{}-Pago:{}-Equipo:{}-Jugador:{}".format(self.__inicio,self.__fin,self.__pago,self.__equipo,self.__jugador))
